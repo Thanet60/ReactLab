@@ -44,8 +44,9 @@ export default class WordCard extends Component{
             <div>
                 <h1>The name of this lap is</h1>
                 {Array.from(this.state.chars).map(( c , i ) => <CharacterCard value = {c} key = {i} attempt= {this.state.attempt} activationHandler={this.activationHandler}></CharacterCard>)}
-                <button onClick={ (e) => window.location.reload()}>Click for Restart</button>
+                <button onClick={ (e) => window.location.reload()}><h1>Click for Restart</h1></button>
                 <h1>---->{this.state.guess}</h1>
+                <h1>{this.state.completed ? 'REACTLAB': ''}</h1>
                 <h2>Your Round = {this.state.attempt} / 4 </h2>
                 <h2>{this.state.attempt == 2? 'Try again':''}</h2>
                 <h2>{this.state.attempt == 3? 'You can do this':''}</h2>
