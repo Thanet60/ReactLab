@@ -34,6 +34,10 @@ export default class WordCard extends Component{
             }
             else{
                 this.setState({guess: [], attempt: this.state.attempt + 1})
+                if(this.state.attempt == 4) {
+                    alert("You LOSE -----------ans is REACTLAB-------------")
+                    window.location.reload()
+                }
             }
         }
     }
@@ -51,7 +55,6 @@ export default class WordCard extends Component{
                 <h2>{this.state.attempt == 2? 'Try again':''}</h2>
                 <h2>{this.state.attempt == 3? 'You can do this':''}</h2>
                 <h2>{this.state.attempt == 4? 'This is your last chance':''}</h2>
-                <h2>{this.state.attempt == 5? 'YOU LOSE------------ans is REACTLAB-------------':''}</h2>
                 <h2>{this.state.completed ? 'YOU WIN': ''}</h2>
             </div>
             
