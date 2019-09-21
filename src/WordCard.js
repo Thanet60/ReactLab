@@ -22,6 +22,7 @@ export default class WordCard extends Component{
         super(props)
         this.state=prepareStateFromWord(props.value)
     }
+    
 
     activationHandler = (c) => { 
         console.log(`${c} has been activated.`) 
@@ -43,13 +44,14 @@ export default class WordCard extends Component{
             <div>
                 <h1>The name of this lap is</h1>
                 {Array.from(this.state.chars).map(( c , i ) => <CharacterCard value = {c} key = {i} attempt= {this.state.attempt} activationHandler={this.activationHandler}></CharacterCard>)}
+                <button onClick={ (e) => window.location.reload()}>Click for Restart</button>
                 <h1>---->{this.state.guess}</h1>
                 <h2>Your Round = {this.state.attempt} / 4 </h2>
-                <h2>{this.state.completed ? 'YOU WIN': ''}</h2>
                 <h2>{this.state.attempt == 2? 'Try again':''}</h2>
                 <h2>{this.state.attempt == 3? 'You can do this':''}</h2>
                 <h2>{this.state.attempt == 4? 'This is your last chance':''}</h2>
                 <h2>{this.state.attempt == 5? 'YOU LOSE------------ans is REACTLAB-------------':''}</h2>
+                <h2>{this.state.completed ? 'YOU WIN': ''}</h2>
             </div>
             
         );
