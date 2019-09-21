@@ -41,9 +41,9 @@ export default class WordCard extends Component{
 
         return(
             <div>
-
+                <h1>The name of this lap is</h1>
                 {Array.from(this.state.chars).map(( c , i ) => <CharacterCard value = {c} key = {i} attempt= {this.state.attempt} activationHandler={this.activationHandler}></CharacterCard>)}
-
+                <h2>Your Round = {this.state.attempt}</h2>
             </div>
             
         );
