@@ -46,8 +46,11 @@ export default class WordCard extends Component{
                 <h1>---->{this.state.guess}</h1>
                 <h2>Your Round = {this.state.attempt} / 5 </h2>
                 <h2>{this.state.completed ? 'YOU WIN': ''}</h2>
-                <h2>{this.state.attempt == 6? 'YOU LOSE             ***ans is REACTLAB***':''}</h2>
-
+                <h2>{this.state.attempt == 2? 'Try':''}</h2>
+                <h2>{this.state.attempt == 3? 'Try it again':''}</h2>
+                <h2>{this.state.attempt == 4? 'You can do this':''}</h2>
+                <h2>{this.state.attempt == 5? 'This is your last chance':''}</h2>
+                <h2>{this.state.attempt == 6? 'YOU LOSE------------ans is REACTLAB-------------':''}</h2>
             </div>
             
         );
